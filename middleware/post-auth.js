@@ -30,7 +30,7 @@ module.exports = function (keycloak) {
     keycloak.getGrantFromCode(request.query.code, request, response)
       .then(grant => {
         let urlParts = {
-          pathname: request.path,
+          pathname: `${request.baseUrl}${request.path}`,
           query: request.query
         };
 
